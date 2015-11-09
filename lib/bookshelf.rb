@@ -35,16 +35,7 @@ Lotus::Model.configure do
   #
   # Alternatively, you can use a block syntax like the following:
   #
-  mapping do
-    collection :books do
-      entity     Book
-      repository BookRepository
-
-      attribute :id,         Integer
-      attribute :title,      String
-      attribute :author,     String
-    end
-  end
+  mapping "#{__dir__}/config/mapping"
 end.load!
 
 Lotus::Mailer.configure do
