@@ -4,8 +4,10 @@
   <% if books.any? %>
     <% books.each do |book| %>
       <div class="book">
-        <h2><%= book.title %></h2>
-        <p><%= book.author %></p>
+        <p>name: <%= book.name %></p>
+        <p>price: <%= book.price %></p>
+        <p>code: <%= book.code %></p>
+        <p>author name: <%= book.author.name %></p>
       </div>
     <% end %>
   <% else %>

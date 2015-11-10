@@ -1,4 +1,8 @@
 class Book
   include Lotus::Entity
-  attributes :title, :author
+  attributes :name, :price, :code, :author_id
+
+  def author
+    AuthorRepository.find(author_id)
+  end
 end
