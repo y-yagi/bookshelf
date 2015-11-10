@@ -12,13 +12,23 @@
 <%=
   form_for :book, routes.books_path do
     div class: 'input' do
-      label      :title
-      text_field :title
+      label      :name
+      text_field :name
     end
 
     div class: 'input' do
-      label      :author
-      text_field :author
+      label  :author_id
+      select :author_id, authors
+    end
+
+    div class: 'input' do
+      label      :price
+      text_field :price
+    end
+
+    div class: 'input' do
+      label      :code
+      text_field :code
     end
 
     div class: 'controls' do

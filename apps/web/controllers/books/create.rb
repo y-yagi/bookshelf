@@ -2,12 +2,14 @@ module Web::Controllers::Books
   class Create
     include Web::Action
 
-    expose :book
+    expose :book, :authors
 
     params do
       param :book do
-        param :title,  presence: true
-        param :author, presence: true
+        param :name,  presence: true
+        param :author_id, presence: true
+        param :price, presence: true, type: Integer
+        param :code, presence: true
       end
     end
 
@@ -16,6 +18,8 @@ module Web::Controllers::Books
         @book = BookRepository.create(Book.new(params[:book]))
 
         redirect_to routes.books_path
+      else
+        @authors = AuthorRepository.id_and_names
       end
     end
   end
